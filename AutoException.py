@@ -30,7 +30,7 @@ class File:
                 
                 decl, var = tmp
 
-                # actual java code manipulation
+                # actual java code manipulation 
                 if (decl not in self.non_objects_keywords):
                     self.insert_NullPointerException(len(lines)-n, var)
                 elif (decl in self.empty_check_keyword):
