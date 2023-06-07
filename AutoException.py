@@ -161,7 +161,7 @@ def main():
     splitter = "\\"
     current_path = os.path.realpath(__file__)[:os.path.realpath(__file__).rindex(splitter)+1]
 
-    for file in next(os.walk(current_path)[2]):
+    for file in next(os.walk(current_path))[2]:
         keyword = ".java"
         if (file[len(file)-len(keyword):] != keyword):
             continue
