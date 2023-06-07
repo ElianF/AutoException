@@ -20,7 +20,7 @@ class File:
             lines = file.readlines()
         lines.reverse()
 
-        for n, line in enumerate(self.lines):
+        for n, line in enumerate(lines):
             content = self.get_method_content(line)
 
             for var_decl in content:
@@ -161,7 +161,7 @@ def main():
     splitter = "\\"
     current_path = os.path.realpath(__file__)[:os.path.realpath(__file__).rindex(splitter)+1]
 
-    for file in next(os.walk(current_path))[2]:
+    for file in next(os.walk(current_path)[2]):
         keyword = ".java"
         if (file[len(file)-len(keyword):] != keyword):
             continue
